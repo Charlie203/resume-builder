@@ -73,7 +73,8 @@ export default function App() {
   }
 
   const themeStyles: Record<string, any> = {
-    light: { pageBg: "linear-gradient(180deg,#000000,#000000)", cardBg: "#ffffff", text: "#0b1220", accent: "#2563eb" },
+    // FIXED: Changed the "light" theme background to be a light color.
+    light: { pageBg: "linear-gradient(180deg,#f9fafb,#f3f4f6)", cardBg: "#ffffff", text: "#0b1220", accent: "#2563eb" },
     dark: { pageBg: "#0b0f13", cardBg: "#0f1720", text: "#e6eef8", accent: "#7c3aed" },
     elegant: { pageBg: "linear-gradient(180deg,#fbf7f2,#fffefc)", cardBg: "#ffffff", text: "#111827", accent: "#8b5cf6" },
     corporate: { pageBg: "linear-gradient(180deg,#eef2ff,#ffffff)", cardBg: "#ffffff", text: "#06202a", accent: "#0ea5a3" },
@@ -95,7 +96,22 @@ export default function App() {
           <aside style={{ borderRadius: 16, padding: 18, background: 'rgba(255,255,255,0.6)', boxShadow: '0 12px 30px rgba(2,6,23,0.06)', backdropFilter: 'blur(8px)' }}>
             <div style={{ display: 'flex', gap: 8, marginBottom: 14, justifyContent: 'space-between' }}>
               {(['light','dark','elegant','corporate','creative'] as const).map(t => (
-                <button key={t} onClick={() => setTheme(t)} style={{ flex: 1, padding: '8px 10px', borderRadius: 12, border: theme===t ? `2px solid ${themeStyles[t].accent}` : '1px solid rgba(2,6,23,0.06)', background: theme===t ? themeStyles[t].cardBg : 'transparent', cursor: 'pointer', boxShadow: theme===t ? '0 6px 18px rgba(2,6,23,0.08)' : 'none' }}>{t.charAt(0).toUpperCase()+t.slice(1)}</button>
+                <button 
+                  key={t} 
+                  onClick={() => setTheme(t)} 
+                  style={{ 
+                    flex: 1, 
+                    padding: '8px 10px', 
+                    borderRadius: 12, 
+                    border: theme===t ? `2px solid ${themeStyles[t].accent}` : '1px solid rgba(2,6,23,0.06)', 
+                    background: theme===t ? themeStyles[t].cardBg : 'transparent', 
+                    cursor: 'pointer', 
+                    boxShadow: theme===t ? '0 6px 18px rgba(2,6,23,0.08)' : 'none',
+                    // FIXED: Added color property to make text black.
+                    color: '#111827'
+                  }}>
+                    {t.charAt(0).toUpperCase()+t.slice(1)}
+                  </button>
               ))}
             </div>
 
