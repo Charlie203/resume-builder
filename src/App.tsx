@@ -73,7 +73,7 @@ export default function App() {
   }
 
   const themeStyles: Record<string, any> = {
-    light: { pageBg: "linear-gradient(180deg,#f7fbff,#ffffff)", cardBg: "#000000", text: "#0b1220", accent: "#2563eb" },
+    light: { pageBg: "linear-gradient(180deg,#ffffff,#000000)", cardBg: "#000000", text: "#0b1220", accent: "#2563eb" },
     dark: { pageBg: "#0b0f13", cardBg: "#0f1720", text: "#e6eef8", accent: "#7c3aed" },
     elegant: { pageBg: "linear-gradient(180deg,#fbf7f2,#fffefc)", cardBg: "#ffffff", text: "#111827", accent: "#8b5cf6" },
     corporate: { pageBg: "linear-gradient(180deg,#eef2ff,#ffffff)", cardBg: "#ffffff", text: "#06202a", accent: "#0ea5a3" },
