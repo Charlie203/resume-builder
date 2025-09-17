@@ -8,7 +8,7 @@ import html2canvas from "html2canvas";
 type Exp = { role: string; company: string; period: string; bullets: string[] };
 type Edu = { school: string; degree: string; year: string };
 
-export default function App(): JSX.Element {
+export default function App() {
   const [theme, setTheme] = useState<"light" | "dark" | "elegant" | "corporate" | "creative">("elegant");
   const [name, setName] = useState("Your Name");
   const [title, setTitle] = useState("Senior Product Designer");
@@ -42,7 +42,6 @@ export default function App(): JSX.Element {
       const img = canvas.toDataURL("image/png");
       const pdf = new jsPDF({ unit: "pt", format: "a4" });
       const pdfW = pdf.internal.pageSize.getWidth();
-      const pdfH = pdf.internal.pageSize.getHeight();
       const imgProps = (pdf as any).getImageProperties(img);
       const imgW = pdfW - 40;
       const imgH = (imgProps.height * imgW) / imgProps.width;
